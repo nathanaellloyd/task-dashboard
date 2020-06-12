@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TaskCard from './TaskCard';
+import TaskHeader from './TaskHeader'; 
 
 class Task extends Component {
     state = {
@@ -43,11 +44,12 @@ class Task extends Component {
     }
 
     render() {
+        
      const taskheader = (
             this.state.tasks.map((task) => {
                 return (
 
-                <TaskCard
+                <TaskHeader
                     taskHeader={task.name}
                 />
                 );             
@@ -58,11 +60,11 @@ class Task extends Component {
         this.state.tasks[0].tasks.map((task, index) => {
             return (
 
-            <TaskCard
-                name={task.name}
-                description={task.description}
-                date={task.date}
-            />
+                <TaskCard
+                    name={task.name}
+                    description={task.description}
+                    date={task.date}
+                />
             );             
         })
  ); 
@@ -76,8 +78,6 @@ class Task extends Component {
                 <div>
                     {tasks}
                 </div>
-
-
             </>
 
         ); 

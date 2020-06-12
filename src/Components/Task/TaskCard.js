@@ -14,9 +14,9 @@ const TaskCard = ({taskHeader, name, description, date}) => {
     return (
         
         <>
-            <div className="task-header">
+            {/* <div className="task-header">
                 <h1>{taskHeader}</h1>
-            </div>
+            </div> */}
             <div className="task-card">
                 <h2>{name}</h2>
                 <p>{description}</p>
