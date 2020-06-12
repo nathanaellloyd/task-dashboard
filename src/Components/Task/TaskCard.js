@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const TaskCard = ({}) => {
+const TaskCard = ({taskHeader, name, description, date}) => {
+    
+    const oldDate = date; 
 
-    // let oldDate = this.props.date; 
-    // let formatDate = formatDate(oldDate);
+    const formatDate = (string) => {
+        let options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', weekday: 'long'  };
+        return new Date(string).toLocaleDateString("en-US",options);
+    }
 
-    // formatDate = (string) => {
-    //     let options = { year: 'numeric', month: 'long', day: 'numeric' };
-    //     return new Date(string).toLocaleDateString([],options);
-    // }
+    const newDate = formatDate(oldDate);
     
     return (
         
         <>
             <div className="task-header">
-                <h1>{this.props.taskHeader}</h1>
+                <h1>{taskHeader}</h1>
             </div>
             <div className="task-card">
-                <h2>{this.props.name}</h2>
-                <p>{this.props.description}</p>
-                <p>{this.props.date}</p>
+                <h2>{name}</h2>
+                <p>{description}</p>
+                <p>{newDate}</p>
             </div>
         </>
         );
