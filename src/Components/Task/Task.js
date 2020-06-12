@@ -62,7 +62,6 @@ class Task extends Component {
                 name={task.name}
                 description={task.description}
                 date={task.date}
-                isCompletele={task.isComplete}
             />
             );             
         })
