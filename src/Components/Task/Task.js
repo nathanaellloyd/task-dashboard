@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import TaskCard from './TaskCard';
-import TaskHeader from './TaskHeader'; 
+// import TaskHeader from './TaskHeader'; 
 
 class Task extends Component {
     state = {
         tasks: [
+
         {
                 "name": "ACTIVITY 01",
                 "tasks": [
@@ -43,21 +44,21 @@ class Task extends Component {
         ]
     }
 
-    render() {
-        
-     const taskheader = (
-            this.state.tasks.map((task) => {
-                return (
+    render () {
 
-                <TaskHeader
-                    taskHeader={task.name}
-                />
-                );             
-            })
-     ); 
+    const taskHeader = (this.state.tasks.name); 
+
+    const header = (taskHeader) => {
+    
+        return (
+                <div className="task-header">
+                    <h1>{taskHeader}:</h1>
+                </div>
+            );
+        };
 
      const tasks = (
-        this.state.tasks[0].tasks.map((task, index) => {
+        this.state.tasks[0].tasks.map((task) => {
             return (
 
                 <TaskCard
@@ -70,9 +71,10 @@ class Task extends Component {
  ); 
             
         return (
+            
             <>
                 <div>
-                    {taskheader}
+                    {header}
                 </div>
 
                 <div>
