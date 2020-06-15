@@ -6,7 +6,7 @@ const TaskCard = ({name, description, date}) => {
 
     const formatDate = (string) => {
         let options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', weekday: 'long'  };
-        return new Date(string).toLocaleDateString("en-US",options);
+        return new Date(string).toLocaleDateString("en-US",options).replace(/[,\s]/," |");
     }
 
     const newDate = formatDate(oldDate);
