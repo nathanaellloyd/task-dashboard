@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TaskCard from './TaskCard';
-// import TaskHeader from './TaskHeader'; 
+import TaskHeader from './TaskHeader'; 
 
 class Task extends Component {
     state = {
@@ -46,16 +46,16 @@ class Task extends Component {
 
     render () {
 
-    const taskHeader = (this.state.tasks.name); 
-
-    const header = (taskHeader) => {
+    const taskHeader = (
+            this.state.tasks.map((task) => {
+                return (
     
-        return (
-                <div className="task-header">
-                    <h1>{taskHeader}:</h1>
-                </div>
-            );
-        };
+                    <TaskHeader
+                     taskHeader={task.name}
+                    />
+                );             
+            })
+     ); 
 
      const tasks = (
         this.state.tasks[0].tasks.map((task) => {
@@ -74,7 +74,7 @@ class Task extends Component {
             
             <>
                 <div>
-                    {header}
+                    {taskHeader}
                 </div>
 
                 <div>
