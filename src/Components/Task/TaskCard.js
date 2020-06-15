@@ -19,6 +19,7 @@ const TaskCard = ({name, description, date}) => {
                 <p>{description}</p>
                 <p>{newDate}</p>
             </div>
+            
         </>
         );
     };

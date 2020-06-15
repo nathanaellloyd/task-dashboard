@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TaskCard from './TaskCard';
 import TaskHeader from './TaskHeader'; 
+import Progress from '../Progress'; 
 
 class Task extends Component {
     state = {
@@ -69,6 +70,10 @@ class Task extends Component {
             );             
         })
  ); 
+
+    const total = this.state.tasks[0].tasks.length;
+    const completed = this.state.tasks[0].tasks.filter(t => t.isComplete).length;
+    const percentage = (completed/total) * 100;
             
         return (
             
@@ -80,6 +85,9 @@ class Task extends Component {
                 <div>
                     {tasks}
                 </div>
+                <div>
+                    <Progress percentage={percentage} />    
+                </div> 
             </>
 
         ); 
