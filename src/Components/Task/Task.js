@@ -52,7 +52,7 @@ class Task extends Component {
                 return (
     
                     <TaskHeader
-                     taskHeader={task.name}
+                        taskHeader={task.name}
                     />
                 );             
             })
@@ -66,10 +66,26 @@ class Task extends Component {
                     name={task.name}
                     description={task.description}
                     date={task.date}
+                    isComplete={task.isComplete}
                 />
             );             
         })
- ); 
+    ); 
+
+    // const isComplete = this.state.tasks[0].tasks[0].isComplete;;
+
+    // const isComplete = (
+    //     this.state.tasks[0].tasks.map((task) => {
+    //         return (
+
+    //             <TaskCard
+    //                 isComplete={task.isComplete}
+    //             />
+    //         );             
+    //     })
+    // ); 
+    
+    // console.log(isComplete); 
 
     const total = this.state.tasks[0].tasks.length;
     const completed = this.state.tasks[0].tasks.filter(t => t.isComplete).length;

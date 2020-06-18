@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TaskCard = ({name, description, date}) => {
+const TaskCard = ({name, description, date, isComplete}) => {
     
     const oldDate = date; 
 
@@ -18,6 +18,7 @@ const TaskCard = ({name, description, date}) => {
                 <h2>{name}</h2>
                 <p>{description}</p>
                 <p>{newDate}</p>
+                <p>{isComplete}</p>
             </div>
             
         </>
