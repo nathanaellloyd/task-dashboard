@@ -72,6 +72,13 @@ class Task extends Component {
         })
     ); 
 
+    // const trueTick = true; 
+    // const falseTick = false; 
+
+    // this.state.tasks[0].tasks.map((task) => {
+    
+    //      task.isComplete === true ? trueTick : falseTick; })
+
     // const isComplete = this.state.tasks[0].tasks[0].isComplete;;
 
     // const isComplete = (

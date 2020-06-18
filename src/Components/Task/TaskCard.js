@@ -10,6 +10,14 @@ const TaskCard = ({name, description, date, isComplete}) => {
     }
 
     const newDate = formatDate(oldDate);
+    
+    const trueTick = true; 
+    const falseTick = false; 
+
+    this.state.tasks[0].tasks.map((task) => {
+    
+         task.isComplete === true ? trueTick : falseTick; })
+
 
     // console.log(isComplete)
     
