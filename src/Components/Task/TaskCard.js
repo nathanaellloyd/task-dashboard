@@ -10,6 +10,8 @@ const TaskCard = ({name, description, date, isComplete}) => {
     }
 
     const newDate = formatDate(oldDate);
+
+    // console.log(isComplete)
     
     return (
         
@@ -18,7 +20,7 @@ const TaskCard = ({name, description, date, isComplete}) => {
                 <h2>{name}</h2>
                 <p>{description}</p>
                 <p>{newDate}</p>
-                <p>{isComplete}</p>
+                <p>{isComplete.toString()}</p>
             </div>
             
         </>
