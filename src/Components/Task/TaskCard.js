@@ -1,4 +1,6 @@
 import React from 'react';
+import boldtick from '../../Icons/boldtick.png'; 
+import emptytick from '../../Icons/emptytick.png'; 
 
 const TaskCard = ({name, description, date, isComplete}) => {
     
@@ -20,6 +22,18 @@ const TaskCard = ({name, description, date, isComplete}) => {
 
 
     // console.log(isComplete)
+
+    // const trueTick = () => {
+    //     if (isComplete = true )
+    // }
+
+    // if (isComplete) {
+    //      let tickIcon = <img src={boldtick} alt='boldtick'/>
+    //   } else {
+    //      let tickIcon = <img src={emptytick} alt='emptytick'/>
+    //   }
+
+
     
     return (
         
@@ -29,6 +43,13 @@ const TaskCard = ({name, description, date, isComplete}) => {
                 <p>{description}</p>
                 <p>{newDate}</p>
                 <p>{isComplete.toString()}</p>
+
+                { isComplete
+                    ?  <img src={boldtick} alt='boldtick'/>
+                        : 
+                        <img src={emptytick} alt='emptytick'/>
+                }
+
             </div>
             
         </>
