@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Progress = ({percentage}) => {
 	const [style, setStyle] = useState({});
-	
+
 	setTimeout(() => {
 		const newStyle = {
 			opacity: 1,

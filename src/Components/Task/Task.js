@@ -26,13 +26,13 @@ class Task extends Component {
                     "name": "The third task has a much longer name",
                     "description": "Specific details of the stage taken action to finish the task",
                     "date": "2020-05-07T16:00:00.000Z",
-                    "isComplete": false
+                    "isComplete": true
                     },
                     {
                     "name": "The fourth task has an even longer name so you should use an ellipsis to clamp it",
                     "description": "This is another short description",
                     "date": "2020-05-08T10:00:00.000Z",
-                    "isComplete": false
+                    "isComplete": true
                     },
                     {
                     "name": "The fifth task",
@@ -47,22 +47,13 @@ class Task extends Component {
 
     render () {
 
-    const taskHeader = (
-            this.state.tasks.map((task) => {
-                return (
-    
-                    <TaskHeader
-                        taskHeader={task.name}
-                    />
-                );             
-            })
-     ); 
 
      const tasks = (
         this.state.tasks[0].tasks.map((task) => {
             return (
 
                 <TaskCard
+                    key={task.name}
                     name={task.name}
                     description={task.description}
                     date={task.date}
@@ -72,31 +63,22 @@ class Task extends Component {
         })
     ); 
 
-    // const trueTick = true; 
-    // const falseTick = false; 
-
-    // this.state.tasks[0].tasks.map((task) => {
-    
-    //      task.isComplete === true ? trueTick : falseTick; })
-
-    // const isComplete = this.state.tasks[0].tasks[0].isComplete;;
-
-    // const isComplete = (
-    //     this.state.tasks[0].tasks.map((task) => {
-    //         return (
-
-    //             <TaskCard
-    //                 isComplete={task.isComplete}
-    //             />
-    //         );             
-    //     })
-    // ); 
-    
-    // console.log(isComplete); 
 
     const total = this.state.tasks[0].tasks.length;
     const completed = this.state.tasks[0].tasks.filter(t => t.isComplete).length;
     const percentage = (completed/total) * 100;
+
+    const taskHeader = (
+        this.state.tasks.map((task) => {
+            return (
+
+                <TaskHeader
+                    key={task.name} 
+                    taskHeader={task.name} 
+                    percentage={percentage}                    />
+            );             
+        })
+ ); 
             
         return (
             

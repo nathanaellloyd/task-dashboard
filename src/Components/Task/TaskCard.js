@@ -13,28 +13,6 @@ const TaskCard = ({name, description, date, isComplete}) => {
 
     const newDate = formatDate(oldDate);
 
-    // const trueTick = true; 
-    // const falseTick = false; 
-
-    // this.state.tasks[0].tasks.map((task) => {
-    
-    //      task.isComplete === true ? trueTick : falseTick; })
-
-
-    // console.log(isComplete)
-
-    // const trueTick = () => {
-    //     if (isComplete = true )
-    // }
-
-    // if (isComplete) {
-    //      let tickIcon = <img src={boldtick} alt='boldtick'/>
-    //   } else {
-    //      let tickIcon = <img src={emptytick} alt='emptytick'/>
-    //   }
-
-
-    
     return (
         
         <>
@@ -42,12 +20,8 @@ const TaskCard = ({name, description, date, isComplete}) => {
                 <h2>{name}</h2>
                 <p>{description}</p>
                 <p>{newDate}</p>
-                <p>{isComplete.toString()}</p>
-
                 { isComplete
-                    ?  <img src={boldtick} alt='boldtick'/>
-                        : 
-                        <img src={emptytick} alt='emptytick'/>
+                    ?  <img src={boldtick} alt='boldtick' class='bold-tick'/> : <img src={emptytick} alt='emptytick' class='empty-tick'/>
                 }
 
             </div>
